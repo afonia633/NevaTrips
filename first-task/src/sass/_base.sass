@@ -1,0 +1,99 @@
+$color-green-dark: #425844
+$color-green-light: #61A568
+
+$color-blue-dark: #101D2C
+
+$color-gray-dark: #AAAAAA
+$color-gray-light: #F5F5F5
+    
+@mixin respond($breakpoint)
+   @if $breakpoint == no-phone
+      @media only screen and (min-width: 600px)
+         @content
+
+   @if $breakpoint == phone
+    @media only screen and (max-width: 599px)
+    @content
+
+   
+//    @if $breakpoint == tab-port
+//       @media only screen and (max-width: 830px)
+//          @content
+
+//    @if $breakpoint == tab-land
+//       @media only screen and (max-width: 1170px)
+//          @content
+
+//    @if $breakpoint == big-screen
+//       @media only screen and (min-width: 1800px)
+//          @content
+    
+*, ::after, ::before
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 60%
+    display: flex
+    justify-content: center
+    // font-size: 62.5%
+    // @include respond(tab-land)
+    //     font-size: 50%
+    // @include respond(phone)
+    //     font-size: 40%
+
+body
+    font-family: "open Sans", sans-serif
+    font-weight: 400
+    font-size: 1.4rem
+    display: flex
+    justify-content: center
+    max-width: 1400px
+
+.container
+    @include respond(no-phone)  
+        display: grid
+        grid-template-rows: 1px repeat(3, minmax(350px, 35.14vh)) 1px
+        grid-template-columns: 1fr minmax(76.42vw, 1200px) 1fr
+        row-gap: 5.5vh
+
+.box
+    display: grid
+    grid-template-rows: 2vh 33.48vh 58.29vh 3vh
+    grid-template-columns: 4.26vw 1fr 4.26vw
+    // @include respond(no-phone)
+    // grid-template-rows: 1px repeat(3, 18.6vh)
+    // grid-template-columns: 1fr 76.42vw 1fr
+    // row-gap: 2vh
+
+    @include respond(no-phone)
+        grid-row: 2 / 3
+        grid-column: 2 / 3 
+        display: grid
+        grid-template-rows: minmax(50px , 8.3vh) 35px minmax(min-content, 4.09vh) 1fr 
+        grid-template-columns: 11vw 22.78vw 1fr
+        border: 1px solid #828282
+        border-radius: 15px
+        height: 100%
+
+        
+        
+
+    &__2
+        @include respond(no-phone)
+            grid-row: 3 / 4
+
+    &__3
+        @include respond(no-phone)
+            grid-row: 4 / 5
+    //     @include respond(phone)
+    //         grid-template-rows: 1px 43.22vh 56vh 2vh
+       
+
+    //         grid-template-rows: 4px repeat(3, 18.6vh)
+    // @include respond(tab-land)
+    //     grid-template-rows: 6rem 80vh min-content 40vw minmax(min-content, 14rem)
+    //     grid-template-columns: [full-start] minmax(6rem, 1fr ) [center-start] repeat(8 ,[col-start] minmax(min-content, 14rem) [col-end] )[center-end] minmax(6rem, 1fr )  [full-end]
+    // @include respond(tab-port)
+    //     grid-template-rows: 6rem calc(100vh - 6rem)  min-content min-content min-content 50vw minmax(min-content, 14rem)
