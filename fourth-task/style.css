@@ -1,0 +1,64 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.choiceWay {
+  background: pink;
+  width: 300px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.choiceWay:hover {
+  transform: translateY(-2px);
+}
+
+.block_way {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new_div {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 20px;
+  width: 50px;
+  height: 25px;
+  background: blue;
+  color: aqua;
+  flex: 0 1 100%;
+}
+
+.new_div:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.next_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 50px;
+  height: 25px;
+  background: blue;
+  color: aqua;
+  flex: 0 1 100%;
+}
+
+.next_div:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.final {
+  display: flex;
+  flex: 0 1 100%;
+  justify-content: start;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
